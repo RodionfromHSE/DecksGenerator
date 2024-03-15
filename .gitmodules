@@ -1,0 +1,7 @@
+[submodule "anki"]
+	path = anki
+	url = https://github.com/RodionfromHSE/AnkiAPI
+[submodule "helpers"]
+	path = helpers
+	url = https://github.com/RodionfromHSE/PyHelpers
+	branch = deck_gen
