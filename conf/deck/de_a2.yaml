@@ -1,0 +1,25 @@
+# @package _global_
+defaults:
+  - /dataset/result@result: de_a2
+
+anki:
+  deck: German_A2
+  card_templates:
+    - front: |-
+        {word} ({part_of_speech}) <br>
+        {example} <br> <br> <br>
+        Plural: {plural_or_null} 
+      back: |-
+        {word_en} <br>
+        {example_en} <br> <br> <br>
+        Meaning: {meaning_en} <br>
+        {audio}
+    - front: |-
+        {word_en} <br>
+        {example_en}
+      back: |-
+        {word} ({part_of_speech}) <br>
+        {example} <br> <br> <br>
+        Plural: {plural_or_null} <br>
+        Meaning: {meaning_en} <br>
+        {audio}

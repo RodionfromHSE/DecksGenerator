@@ -1,0 +1,11 @@
+raw_location: ${data_dir}/words/interim/german_a2b1/static
+raw_files_a2: # they are all JSON files...
+  - ${..raw_location}/A2nouns
+  - ${..raw_location}/A2others
+  - ${..raw_location}/A2verbs
+raw_files_b1: # they are all JSON files...
+  - ${..raw_location}/B1nouns
+  - ${..raw_location}/B1others
+  - ${..raw_location}/B1verbs
+words_a2: ${data_dir}/words/german/a2_words.csv
+words_b1: ${data_dir}/words/german/b1_words.csv

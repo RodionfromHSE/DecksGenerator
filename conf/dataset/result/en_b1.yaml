@@ -1,0 +1,11 @@
+name: b1_words
+lang: english
+
+keys_to_be_saved:  # keys to be saved among the input information in the result file
+  - ???
+
+words_file: ${data_dir}/words/${.lang}/${.name}.csv
+
+result_dir: ${data_dir}/results/${.lang}
+result_raw: ${.result_dir}/${.name}_raw.json
+result: ${.result_dir}/${.name}.json

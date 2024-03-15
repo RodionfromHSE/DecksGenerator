@@ -1,0 +1,20 @@
+name: a2_words
+lang: german
+
+keys_to_be_saved:  # keys to be saved among the input information in the result file
+  - word
+
+remap: {} # remap the keys of the result during parsing
+
+words_file: ${data_dir}/words/${.lang}/${.name}.csv
+
+result_dir: ${data_dir}/results/${.lang}
+result_raw: ${.result_dir}/${.name}_raw.json
+result: ${.result_dir}/${.name}.json
+
+audio:
+  key: example
+  lang: de
+  path_key: path_audio
+  hash_key: hash_audio
+  dir: ${..result_dir}/${..name}_audio
