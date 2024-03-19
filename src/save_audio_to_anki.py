@@ -32,7 +32,6 @@ def gen_hash(data: tp.List[tp.Dict], cfg: OmegaConf) -> tp.List[tp.Dict]:
     hash_audio_key = cfg.audio.hash_key
     for idx, sample in enumerate(tqdm(data, desc="Adding audio hash")):
         sample[hash_audio_key] = f"{get_hash()}.mp3"
-        print(sample[hash_audio_key])
     return data
 
 def add_audio_to_anki(data: tp.List[tp.Dict], cfg: OmegaConf) -> None:
