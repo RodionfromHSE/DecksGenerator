@@ -1,5 +1,20 @@
+## Attention
+
+Top-priority:
+- [ ] Rewrite the self-made anki api for `anki-connect-api` with all the functions I need.
+- [ ] Fix the problem with absolute paths for audio
+Audio storage:
+```bash
+$ankiMediaPath = "$env:APPDATA\Anki2\User 1\collection.media" # Windows
+ankiMediaPath="$HOME/Library/Application Support/Anki2/User 1/collection.media" # Mac
+ankiMediaPath="$HOME/.local/share/Anki2/User 1/collection.media" # Linux
+```
+You can use relative paths in `[sound:PATH]` in the card's field so that it'd be synced with the media folder.
+
 # DecksGenerator
 A collection of scripts for conversion list of english words to complete [en-ru] anki decks with sentences and definitions for each word.
+
+
 
 ## Cloning the project
 **The project has submodules!**
