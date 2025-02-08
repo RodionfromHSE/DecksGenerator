@@ -2,7 +2,7 @@
 import os
 import sys
 import logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 
 ROOT_DIR = os.path.abspath(os.path.join(__file__, '../..'))
 sys.path.append(ROOT_DIR)
@@ -37,7 +37,7 @@ def parse_one(cfg: OmegaConf, result_raw: tp.Dict[str, tp.Any]) -> tp.List[tp.Di
         results = []
         for meta_new in meta:
             res = {**meta_existing, **meta_new}
-            for key, remapped_key in cfg.remap.items():
+            for key, remapped_key in cfg.get("remap", {}).items():
                 res[remapped_key] = res.pop(key)
             results.append(res)
         return results
@@ -54,11 +54,13 @@ def parse_json(result_cfg: OmegaConf, results_raw: tp.List[tp.Dict]) -> tp.List[
         if result is not None:
             results.extend(result)
         else:
+            print("Skipping: ", result_raw)
             n_skipped += 1
 
-    n_words = len(results)
-    logging.info(f"{n_words} were parsed")
+    
+    logging.info(f"{len(results)} were parsed")
     if n_skipped > 0:
+        n_words = len(results_raw)
         logging.warning(f"Skipped {n_skipped} results ({n_skipped / n_words * 100:.2f}%)")
     return results
 
