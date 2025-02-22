@@ -19,6 +19,7 @@ from gtts import gTTS
 from helpers.src.config_helpers import read_config, pprint_config
 from helpers.src.read_write import read_json, write_json, _create_dir
 from anki.src.anki_api import AnkiApi
+from src.gen_audio import get_anki_media_folder
 # hash
 import hashlib
 
@@ -39,7 +40,8 @@ def add_audio_to_anki(data: tp.List[tp.Dict], cfg: OmegaConf) -> None:
     api = AnkiApi()
     hash_audio_key, path_audio_key = cfg.audio.hash_key, cfg.audio.path_key
     for sample in tqdm(data, desc="Adding audio to Anki"):
-        api.add_audio(path=sample[path_audio_key], filename=sample[hash_audio_key])
+        full_path = os.path.join(get_anki_media_folder(), sample[path_audio_key])
+        api.add_audio(path=full_path, filename=sample[hash_audio_key])
 
 def start_pipeline(cfg: OmegaConf) -> None:
     """Start pipeline of the script"""

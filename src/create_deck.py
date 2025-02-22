@@ -23,7 +23,7 @@ from src_utils.flash_cards import FlashCardGenerator, FlashCard
 
 def gen_and_add_audio_path(data: tp.List[tp.Dict], cfg: OmegaConf) -> tp.List[tp.Dict]:
     """Generate audio and add audio path to data"""
-    path_audio_key, audio_key, audio_dir, lang = cfg.audio.path_key, cfg.audio.key, cfg.audio.dir, cfg.audio.lang
+    path_audio_key, audio_key, audio_filename, audio_dir, lang = cfg.audio.path_key, cfg.audio.key, cfg.audio.dir, cfg.audio.lang
     _create_dir(audio_dir)
     for idx, sample in enumerate(tqdm(data, desc="Adding audio path")):
         tts = gTTS(sample[audio_key], lang=lang)
