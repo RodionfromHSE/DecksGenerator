@@ -5,7 +5,7 @@ defaults:
   - model: null
   - setup: null
 
-root: /Users/Rodion.Khvorostov/Desktop/Programming/Python/PythonPetProjects/DecksGenerator
+root: /Users/Rodion.Khvorostov/Desktop/Prog/Other/deck_generator
 data_dir: ${root}/data
 
 secrets: ${root}/conf/secret.json

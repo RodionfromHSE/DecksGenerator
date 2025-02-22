@@ -1,5 +1,7 @@
 ## Attention
 
+> The whole project has to be rewritten. The code is not clean and not well-structured; it's hard to maintain and extend it.
+
 Top-priority:
 - [ ] Rewrite the self-made anki api for `anki-connect-api` with all the functions I need.
 - [ ] Fix the problem with absolute paths for audio

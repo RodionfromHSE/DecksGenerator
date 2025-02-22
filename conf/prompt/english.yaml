@@ -3,7 +3,8 @@ template: |-
 
   You're given a word and what part of speech this word is.
   Your task is to provide an information on the word (namely, definition, word_ru, example and example_ru as in example below).
-  Please give one or two among the most popular meanings of the word. Add for each meanings a short example (not more than 8 words).
+  Please give one or two among the most popular and _straight-forward_ meanings of the word. 
+  Add for each meanings a short example (not more than 8 words).
   It's important to provide the valid JSON corresponding to the example below.
 
   Example
